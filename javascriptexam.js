@@ -135,6 +135,25 @@ console.log(mergeOrders(orders, moreOrders));
 // }
 // console.log(getOrderDetails(order));
 
+//1
+function getOrderDetails(o) {
+  const {
+    dish: { name: dishName, category: dishCategory },
+    quantity: orderQuantity,
+    price: orderPrice,
+  } = o;
+
+  return `${dishName} (${dishCategory}) x${orderQuantity} costs $${orderPrice}`;
+}
+console.log(getOrderDetails(orders));
+//2
+const getOrderDetails = ({
+  dish: { name: dishName, category: dishCategory },
+  quantity: orderQuantity,
+  price: orderPrice,
+}) => `${dishName} (${dishCategory}) x${orderQuantity} costs $${orderPrice}`;
+
+console.log(getOrderDetails(orders));
 // ---------------------------------------------------------------------
 //5. List Dish Names and Categories
 
